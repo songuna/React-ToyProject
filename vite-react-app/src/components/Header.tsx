@@ -1,26 +1,40 @@
 import styled from 'styled-components';
+import React, { useEffect, useState } from 'react';
+
+const Header: React.FC = () => {
+    const [isActive, setIsActive] = useState(false);
+
+    const handleScroll = () => {
+        setIsActive(window.scrollY > 0);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    return (
+        <HeaderContainer className={isActive ? 'active' : ''}>
+            <div className="container">
+                <h1>
+                    <button data-animation-scroll="true" data-target="#main">SYN</button>
+                </h1>
+                <Nav>
+                    <ul>
+                        <li><button data-animation-scroll="true" data-target="#about">About</button></li>
+                        <li><button data-animation-scroll="true" data-target="#features">Features</button></li>
+                        <li><button data-animation-scroll="true" data-target="#portfolio">Portfolio</button></li>
+                        <li><button data-animation-scroll="true" data-target="#contact">Contact</button></li>
+                    </ul>
+                </Nav>
+            </div>
+        </HeaderContainer>
+    );
+};
 
 
-
-const Header = () => (
-  <HeaderContainer>
-    <div className="container">
-      <h1>
-        <button data-animation-scroll="true" data-target="#main">SYN</button>
-      </h1>
-      <Nav>
-        <ul>
-          <li><button data-animation-scroll="true" data-target="#about">About</button></li>
-          <li><button data-animation-scroll="true" data-target="#features">Features</button></li>
-          <li><button data-animation-scroll="true" data-target="#portfolio">Portfolio</button></li>
-          <li><button data-animation-scroll="true" data-target="#contact">Contact</button></li>
-        </ul>
-      </Nav>
-    </div>
-  </HeaderContainer>
-);
-
-export default Header;
 
 const HeaderContainer = styled.header`
   position: fixed;
@@ -35,7 +49,6 @@ const HeaderContainer = styled.header`
 const Nav = styled.nav`
   ul {
     display: flex;
-    justify-content: space-between;
     list-style: none;
   }
 
@@ -47,3 +60,5 @@ const Nav = styled.nav`
     font-size: 1rem;
   }
 `;
+
+export default Header;
