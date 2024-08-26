@@ -1,19 +1,25 @@
 import styled from 'styled-components';
+import React from 'react';
+import useTypingEffect from '../hook/useTypingEffect';
 
+const Main: React.FC = () => {
+    const texts = ['Web Publisher', 'Front-End Developer', 'Web UI Designer', 'UX Designer', 'Back-End Developer'];
+    const typedText = useTypingEffect(texts);
 
-const Main = () => (
-  <MainContainer id="main">
-    <div className="container">
-      <h4>Welcome!</h4>
-      <h2>I'M A <span></span></h2>
-      <p>안녕하세요.</p>
-      <p>프론트엔드 개발자 송유나 입니다.</p>
-      <p>오늘보다 내일 더 성장하는 개발자가 되겠습니다.</p>
-      <button className="download">DOWNLOAD CV</button>
-      <button className="mouse"><i className="fa-solid fa-computer-mouse"></i></button>
-    </div>
-  </MainContainer>
-);
+    return (
+        <MainContainer id="main">
+            <div className="container">
+                <h4>Welcome!</h4>
+                <h2>I'M A <span>{typedText}</span></h2>
+                <p>안녕하세요.</p>
+                <p>프론트엔드 개발자 송유나 입니다.</p>
+                <p>오늘보다 내일 더 성장하는 개발자가 되겠습니다.</p>
+                <button className="download">DOWNLOAD CV</button>
+                <button className="mouse"><i className="fa-solid fa-computer-mouse"></i></button>
+            </div>
+        </MainContainer>
+    );
+};
 
 const MainContainer = styled.main`
   width: 100%;
