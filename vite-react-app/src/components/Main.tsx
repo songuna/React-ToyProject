@@ -3,7 +3,7 @@ import React from 'react';
 import useTypingEffect from '../hook/useTypingEffect';
 
 const Main: React.FC = () => {
-    const texts = ['Web Publisher', 'Front-End Developer', 'Web UI Designer', 'UX Designer', 'Back-End Developer'];
+    const texts = ['Front-End Developer'];
     const typedText = useTypingEffect(texts);
 
     return (
