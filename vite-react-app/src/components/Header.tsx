@@ -22,12 +22,12 @@ const Header: React.FC = () => {
                     <button data-animation-scroll="true" data-target="#main">SYN</button>
                 </h1>
                 <Nav>
-                    <ul>
+                    <Ul>
                         <li><button data-animation-scroll="true" data-target="#about">About</button></li>
                         <li><button data-animation-scroll="true" data-target="#features">Features</button></li>
                         <li><button data-animation-scroll="true" data-target="#portfolio">Portfolio</button></li>
                         <li><button data-animation-scroll="true" data-target="#contact">Contact</button></li>
-                    </ul>
+                    </Ul>
                 </Nav>
             </div>
         </HeaderContainer>
@@ -46,11 +46,14 @@ const HeaderContainer = styled.header`
   background-color: rgba(0, 0, 0, 0.8);
 `;
 
-const Nav = styled.nav`
-  ul {
+
+const Ul = styled.ul`
     display: flex;
     list-style: none;
-  }
+`
+
+
+const Nav = styled.nav`
 
   button {
     background: transparent;
