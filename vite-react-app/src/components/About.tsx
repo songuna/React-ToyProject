@@ -54,7 +54,7 @@ const Title = styled.div`
 `;
 
 const Text = styled.p`
-  font-size: 1.15rem;
+  font-size: 15px;
 `
 
 const AboutSelf = styled.div`
