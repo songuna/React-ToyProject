@@ -16,11 +16,11 @@ const Header: React.FC = () => {
     }, []);
 
     return (
-        <HeaderContainer className={isActive ? 'active' : ''}>
-            <Container className="container">
-                <h1>
+        <HeaderContainer isActive={isActive}>
+            <Container>
+                <Logo>
                     <button data-animation-scroll="true" data-target="#main">SYN</button>
-                </h1>
+                </Logo>
                 <Nav>
                     <Ul>
                         <Li><button data-animation-scroll="true" data-target="#about">About</button></Li>
@@ -34,46 +34,52 @@ const Header: React.FC = () => {
     );
 };
 
-
-
-const HeaderContainer = styled.header`
-  position: fixed;
-  color: white;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+const HeaderContainer = styled.header<{ isActive: boolean }>`
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    color: white;
+    background-color: ${({ isActive }) => (isActive ? 'rgba(0, 0, 0, 0.8)' : 'transparent')};
+    transition: background-color 0.3s ease;
+    padding: 0.5rem 1rem;
 `;
 
 const Container = styled.div`
-    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 `;
 
-const Li = styled.li`
-    list-style: none;
+const Logo = styled.h1`
+    button {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
 `;
-
 
 const Ul = styled.ul`
     display: flex;
     list-style: none;
-`
-
-const Nav = styled.nav`
-  button {
-    background: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-  }
 `;
+
+const Li = styled.li`
+    margin: 0 10px;
+    button {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 0.9rem;
+        cursor: pointer;
+    }
+`;
+
+const Nav = styled.nav``;
 
 export default Header;
