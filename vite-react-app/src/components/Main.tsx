@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import useTypingEffect from '../hook/useTypingEffect';
+import useTypingEffect from '../hook/UseTypingEffect';
 
 const Main: React.FC = () => {
     const texts = ['Front-End Developer'];
