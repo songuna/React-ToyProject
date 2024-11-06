@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import React from 'react';
 import useTypingEffect from '../hook/UseTypingEffect';
+import { CiDesktopMouse2 } from "react-icons/ci";
+
 
 const Main: React.FC = () => {
     const texts = ['Front-End Developer'];
@@ -15,7 +17,7 @@ const Main: React.FC = () => {
                 <p>프론트엔드 개발자 송유나 입니다.</p>
                 <p>오늘보다 내일 더 성장하는 개발자가 되겠습니다.</p>
                 <button className="download">DOWNLOAD CV</button>
-                <button className="mouse"><i className="fa-solid fa-computer-mouse"></i></button>
+                <button className="mouse"><CiDesktopMouse2 /></button>
             </div>
         </MainContainer>
     );
