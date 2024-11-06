@@ -11,7 +11,7 @@ const About = () => (
       </Title>
       <AboutSelf className="about-self">
         <div className="left">
-          <img src="images/img.jpg" alt="" />
+          <img src="images/youna.jpg" alt="" width="500px" height="600px" />
         </div>
         <div className="right">
           <H3>안녕하세요 <strong>송유나 입니다.</strong></H3>
