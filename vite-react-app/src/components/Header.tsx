@@ -17,19 +17,19 @@ const Header: React.FC = () => {
 
     return (
         <HeaderContainer className={isActive ? 'active' : ''}>
-            <div className="container">
+            <Container className="container">
                 <h1>
                     <button data-animation-scroll="true" data-target="#main">SYN</button>
                 </h1>
                 <Nav>
                     <Ul>
-                        <li><button data-animation-scroll="true" data-target="#about">About</button></li>
-                        <li><button data-animation-scroll="true" data-target="#features">Features</button></li>
-                        <li><button data-animation-scroll="true" data-target="#portfolio">Portfolio</button></li>
-                        <li><button data-animation-scroll="true" data-target="#contact">Contact</button></li>
+                        <Li><button data-animation-scroll="true" data-target="#about">About</button></Li>
+                        <Li><button data-animation-scroll="true" data-target="#features">Features</button></Li>
+                        <Li><button data-animation-scroll="true" data-target="#portfolio">Portfolio</button></Li>
+                        <Li><button data-animation-scroll="true" data-target="#contact">Contact</button></Li>
                     </Ul>
                 </Nav>
-            </div>
+            </Container>
         </HeaderContainer>
     );
 };
@@ -44,6 +44,20 @@ const HeaderContainer = styled.header`
   width: 100%;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Container = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+const Li = styled.li`
+    list-style: none;
 `;
 
 
@@ -52,9 +66,7 @@ const Ul = styled.ul`
     list-style: none;
 `
 
-
 const Nav = styled.nav`
-
   button {
     background: transparent;
     border: none;
