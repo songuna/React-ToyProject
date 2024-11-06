@@ -7,6 +7,7 @@ import { CiDesktopMouse2 } from "react-icons/ci";
 const Main: React.FC = () => {
     const texts = ['Front-End Developer'];
     const typedText = useTypingEffect(texts);
+    console.log(typedText);
 
     return (
         <MainContainer id="main">
