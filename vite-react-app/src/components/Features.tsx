@@ -6,107 +6,123 @@ import { SiTypescript } from "react-icons/si";
 const Features = () => (
   <FeaturesSection id="features">
     <div className="container">
-      <div className="title">
-        <h4>Features</h4>
-        <h2>What I Do</h2>
-      </div>
-      <div className="do-me">
-        <div className="do-inner">
-          <div className="icon"><FaHtml5 /></div>
+      <Title>
+        <H4>Features</H4>
+        <H2>What I Do</H2>
+      </Title>
+      <Do>
+        <Inner>
+          <Icon><FaHtml5 /></Icon>
           <div className="content">
-            <h3>html5</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <H3>html5</H3>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
           </div>
-        </div>
-        <div className="do-inner">
-          <div className="icon"><FaCss3Alt /></div>
+        </Inner>
+        <Inner>
+          <Icon><FaCss3Alt /></Icon>
           <div className="content">
-            <h3>CSS3</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <H3>CSS3</H3>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
           </div>
-        </div>
-        <div className="do-inner">
-          <div className="icon"><IoLogoJavascript /></div>
+        </Inner>
+        <Inner>
+          <Icon><IoLogoJavascript /></Icon>
           <div className="content">
-            <h3>JavaScript</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <H3>JavaScript</H3>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
           </div>
-        </div>
-        <div className="do-inner">
-          <div className="icon"><FaReact /></div>
+        </Inner>
+        <Inner>
+          <Icon><FaReact /></Icon>
           <div className="content">
-            <h3>React</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <H3>React</H3>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
           </div>
-        </div>
-        <div className="do-inner">
-          <div className="icon"><SiTypescript /></div>
+        </Inner>
+        <Inner>
+          <Icon><SiTypescript /></Icon>
           <div className="content">
-            <h3>Typescript</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <H3>Typescript</H3>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
           </div>
-        </div>
-        <div className="do-inner">
-          <div className="icon"><FaGithubSquare /></div>
+        </Inner>
+        <Inner>
+          <Icon><I><FaGithubSquare /></I></Icon>
           <div className="content">
-            <h3>Github</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <H3>Github</H3>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
           </div>
-        </div>
-      </div>
-      <div className="bg"></div>
+        </Inner>
+      </Do>
+      <Bg/>
     </div>
   </FeaturesSection>
 );
 
-const FeaturesSection = styled.section`
-  .title {
-    margin-bottom: 3rem;
 
-    h4 {
-      font-size: 1.35rem;
-      color: #ed4848;
-    }
+const H4 = styled.h4`
+  font-size: 1.35rem;
+  color: #ed4848;
+`;
 
-    h2 {
-      font-size: 3.5rem;
-    }
+const H2 = styled.h2`
+  font-size: 3.5rem;
+`;
+
+const H3 = styled.h3`
+`;
+
+const Do = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
+const Title = styled.div`
+  margin-bottom: 3rem;
+`;
+
+const Inner = styled.div`
+  width: 30%;
+  height: 220px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+
+  &:hover{
+    background-color: lightcoral;
+    color: white;
   }
+`;
 
-  .do-me {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+const I = styled.i`
+  
+`
 
-    .do-inner {
-      width: 30%;
-      margin-bottom: 2rem;
+const Icon = styled.div`
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+`;
 
-      .icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
 
-      .content {
-        h3 {
-          font-size: 1.5rem;
-        }
+const P = styled.p`
+  font-size: 1rem;
+`
 
-        p {
-          font-size: 1rem;
-        }
-      }
-    }
-  }
 
-  .bg {
-    position: absolute;
+const Bg = styled.div`
+  position: absolute;
     width: 100%;
-    height: 100%;
-    background: url('images/bg.jpg') center center/cover no-repeat;
+    height: 200px;
+    background: url('images/background.jpg') center center/cover no-repeat;
+    background-size: cover;
+    background-attachment: fixed; //스크롤시 이미지 스크롤 구현
     opacity: 0.5;
     z-index: -1;
-  }
+`;
+
+const FeaturesSection = styled.section`
+  width: 100%;
+  height: 900px;
 `;
 
 export default Features;
