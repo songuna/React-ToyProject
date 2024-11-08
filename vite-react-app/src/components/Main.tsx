@@ -31,7 +31,7 @@ const Main: React.FC = () => {
 
 const MainContainer = styled.main`
   width: 100%;
-  height: 750px;
+  height: 700px;
   color: white;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/g.jpg') center center;
   background-size: cover;
