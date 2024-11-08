@@ -1,23 +1,40 @@
-// Header.tsx
 import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
 
 const Header: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastMoveTime, setLastMoveTime] = useState(Date.now());
 
   const handleScroll = () => {
     setIsActive(window.scrollY > 0);
   };
 
+  const handleMouseMove = () => {
+    // 마우스가 움직일 때 헤더를 다시 보여줍니다
+    setIsVisible(true);
+    setLastMoveTime(Date.now());
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove);
+
+    const checkInactivity = setInterval(() => {
+      if (Date.now() - lastMoveTime > 1000) {
+        setIsVisible(false); // 마우스가 3초간 움직이지 않으면 헤더 숨김
+      }
+    }, 1000); // 1초마다 확인
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
+      clearInterval(checkInactivity);
     };
-  }, []);
+  }, [lastMoveTime]);
 
   return (
-    <HeaderContainer className={isActive ? 'active' : ''}>
+    <HeaderContainer className={isActive ? 'active' : ''} isVisible={isVisible}>
       <Container>
         <Logo>
           <button data-animation-scroll="true" data-target="#main">SYN</button>
@@ -35,7 +52,7 @@ const Header: React.FC = () => {
   );
 };
 
-const HeaderContainer = styled.header`
+const HeaderContainer = styled.header<{ isVisible: boolean }>`
   position: fixed;
   width: 100%;
   height: 55px;
@@ -44,11 +61,12 @@ const HeaderContainer = styled.header`
   z-index: 10;
   color: white;
   background-color: transparent;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transform: ${(props) => (props.isVisible ? 'translateY(0)' : 'translateY(-100%)')}; /* 헤더가 사라지거나 나타나는 애니메이션 */
 
   &.active {
     background-color: rgba(243, 158, 158, 0.8);
