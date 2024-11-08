@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-
+import { FaHtml5, FaCss3Alt, FaReact, FaGithubSquare  } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
+import { SiTypescript } from "react-icons/si";
 
 const Features = () => (
   <FeaturesSection id="features">
@@ -10,23 +12,44 @@ const Features = () => (
       </div>
       <div className="do-me">
         <div className="do-inner">
-          <div className="icon"><i className="fa-brands fa-html5"></i></div>
+          <div className="icon"><FaHtml5 /></div>
           <div className="content">
             <h3>html5</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </div>
         <div className="do-inner">
-          <div className="icon"><i className="fa-brands fa-css3-alt"></i></div>
+          <div className="icon"><FaCss3Alt /></div>
           <div className="content">
             <h3>CSS3</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </div>
         <div className="do-inner">
-          <div className="icon"><i className="fa-brands fa-bootstrap"></i></div>
+          <div className="icon"><IoLogoJavascript /></div>
           <div className="content">
-            <h3>Bootstrap v5.0</h3>
+            <h3>JavaScript</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div className="do-inner">
+          <div className="icon"><FaReact /></div>
+          <div className="content">
+            <h3>React</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div className="do-inner">
+          <div className="icon"><SiTypescript /></div>
+          <div className="content">
+            <h3>Typescript</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div className="do-inner">
+          <div className="icon"><FaGithubSquare /></div>
+          <div className="content">
+            <h3>Github</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </div>
