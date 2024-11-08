@@ -8,11 +8,11 @@ const Header: React.FC = () => {
 
   const handleScroll = () => {
     setIsActive(window.scrollY > 0);
+    setIsVisible(true); // 스크롤 시 헤더가 보이도록 설정
   };
 
   const handleMouseMove = () => {
-    // 마우스가 움직일 때 헤더를 다시 보여줍니다
-    setIsVisible(true);
+    setIsVisible(true); // 마우스가 움직일 때 헤더를 다시 보이게 설정
     setLastMoveTime(Date.now());
   };
 
@@ -21,7 +21,7 @@ const Header: React.FC = () => {
     window.addEventListener('mousemove', handleMouseMove);
 
     const checkInactivity = setInterval(() => {
-      if (Date.now() - lastMoveTime > 1000) {
+      if (Date.now() - lastMoveTime > 3000) {
         setIsVisible(false); // 마우스가 3초간 움직이지 않으면 헤더 숨김
       }
     }, 1000); // 1초마다 확인
