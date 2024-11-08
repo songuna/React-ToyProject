@@ -9,6 +9,11 @@ const Main: React.FC = () => {
     const typedText = useTypingEffect(texts);
     console.log(typedText);
 
+    const handleOpenResume = () => {
+    window.open('/Resume.pdf', '_blank'); // 파일을 새 탭에서 열기
+  };
+    
+
     return (
         <MainContainer id="main">
             <div className="container">
@@ -17,8 +22,8 @@ const Main: React.FC = () => {
                 <p>안녕하세요.</p>
                 <p>프론트엔드 개발자 송유나 입니다.</p>
                 <p>오늘보다 내일 더 성장하는 개발자가 되겠습니다.</p>
-                <button className="download">DOWNLOAD CV</button>
-                <button className="mouse"><CiDesktopMouse2 /></button>
+                <button className="download" onClick={handleOpenResume}>OPEN RESUME</button>
+                <button className="mouse" onClick={handleOpenResume}><CiDesktopMouse2 /></button>
             </div>
         </MainContainer>
     );
