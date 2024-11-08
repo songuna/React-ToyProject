@@ -21,7 +21,7 @@ const Contact = () => (
             <div className="icon"><i className="fa-solid fa-envelope-open-text"></i></div>
             <div className="info-text">
               <h3>email</h3>
-              <p>twins7531@naver.com</p>
+              <p>twins7534@naver.com</p>
             </div>
           </div>
           <div className="card">
@@ -55,6 +55,7 @@ const Contact = () => (
 );
 
 const ContactSection = styled.section`
+  height: 700px;
   .title {
     margin-bottom: 3rem;
 
