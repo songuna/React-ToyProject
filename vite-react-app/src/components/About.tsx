@@ -14,7 +14,7 @@ const About = () => (
           <img src="images/youna.jpg" alt="" width="500px" height="600px" />
         </div>
         <div className="right">
-          <H3>안녕하세요 <strong>송유나 입니다.</strong></H3>
+          <H3>안녕하세요 <strong>송유나 입니다</strong></H3>
           <Text>이 홈페이지는 아직 완성되지 않은 홈페이지 입니다.</Text>
           <Text>Q. 개발자 취업을 결심하게 된 계기</Text>
           <Text>
